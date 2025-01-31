@@ -1,7 +1,7 @@
 exit 1
 
 ##------------------------------------------------------------------------------
-## redeploy from previously generate requirements file
+## redeploy from previously generated requirements file
 ##------------------------------------------------------------------------------
 
 rm -r ./.venv
@@ -22,12 +22,22 @@ rm -r ./.venv
 & "$Env:LOCALAPPDATA\Programs\Python\Python311\python.exe" -m venv .venv
 ./.venv/Scripts/Activate.ps1
 
+pip list
+
 python -m pip install --require-virtualenv --upgrade pip setuptools wheel IPython
+
+pip list
 
 pip install --require-virtualenv `
     streamlit `
     pandas `
     numpy `
+    opendatasets `
+    ipython `
+    ipykernel `
+    scikit-learn
+
+pip list
 
 pip freeze --require-virtualenv > "./requirements-app.txt"
 
