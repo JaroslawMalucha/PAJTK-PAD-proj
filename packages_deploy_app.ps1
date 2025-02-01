@@ -35,7 +35,14 @@ pip install --require-virtualenv `
     opendatasets `
     ipython `
     ipykernel `
-    scikit-learn
+    scikit-learn `
+    matplotlib `
+    seaborn `
+    geopandas `
+    contextily `
+    geodatasets `
+    imblearn `
+    xgboost
 
 pip list
 
